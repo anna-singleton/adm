@@ -1,0 +1,42 @@
+# a module is a single directory containing templates
+# src - source directory for templates, relative to the cwd of command
+# dest - destination directory for templated files, absolute path.
+# hook - optionally define a script to be executed when a change happens in a
+#        template. starting with a `!` means the command is executed literally,
+#        otherwise a script with that name is executed
+[module]
+
+[module.i3]
+src = "i3"
+dest = "~/i3"
+hook = "!i3cmd restart"
+
+[module.git]
+src = "git"
+dest = "~"
+
+# a collection is a set of modules and variables, which can include other
+# packages.
+[collection]
+
+[collection.core]
+include = []
+modules = ["git"]
+
+[collection.core.variables]
+foo = "bar"
+bar = "baz"
+
+[collection.graphical]
+include = []
+modules = ["i3"]
+
+[collection.graphical.variables]
+i3_font_size = "14"
+
+[collection.cynthia]
+include = ["core", "graphical"]
+modules = []
+
+[collection.cynthia.variables]
+
