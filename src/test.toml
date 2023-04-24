@@ -8,15 +8,15 @@
 
 [module.i3]
 src = "i3"
-dest = "~/i3"
-hook = "!i3cmd restart"
+dest = "~/.testcfg/i3"
+hook = "!echo $(date) > ~/.testcfg/testhook"
 
 [module.git]
 src = "git"
-dest = "~"
+dest = "~/.testcfg/git"
 
 # a collection is a set of modules and variables, which can include other
-# packages.
+# collections.
 [collection]
 
 [collection.core]
