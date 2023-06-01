@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use crate::module::Module;
 
 use serde::{Serialize, Deserialize};
 
@@ -8,12 +9,6 @@ struct Config {
     collection: HashMap<String, Collection>
 }
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Module {
-    src: String,
-    dest: String,
-    hook: Option<String>,
-}
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Collection {

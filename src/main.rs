@@ -1,4 +1,5 @@
 mod deployment;
+mod module;
 
 use deployment::Deployment;
 
